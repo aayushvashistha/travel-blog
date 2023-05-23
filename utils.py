@@ -1,5 +1,5 @@
 from pymongo import MongoClient
-def get_db_handle(host, port, context):
+def get_db_handle(host, port):
 
  client = MongoClient(host=host,
                       port=int(port),
@@ -7,7 +7,5 @@ def get_db_handle(host, port, context):
                     #   password=password
                      )
  db_handle = client['newdb']
- #Define Collection
- collection = db_handle['newcollection']
- #collection.insert_one(context)
- return db_handle, client, collection
+ 
+ return db_handle
