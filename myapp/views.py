@@ -14,7 +14,7 @@ from utils import get_db_handle
 #     }
 fun_data = get_db_handle('127.0.0.1', 27017)
 
-collection = fun_data['newcollection']
+collection = fun_data['webpageinfo']
 op = dict(collection.find_one({}))
 
 def index(request):
