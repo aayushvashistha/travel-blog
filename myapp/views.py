@@ -6,32 +6,27 @@ from utils import get_db_handle
 #from django.http import HttpResponse
 
 # Create your views here.
-# fun_data = {}
 
-# context ={
-#         "data":"Contact Me",
-#         # "list":[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-#     }
-fun_data = get_db_handle('127.0.0.1', 27017)
+func_data = get_db_handle('127.0.0.1', 27017)
 
-collection = fun_data['webpageinfo']
-op = dict(collection.find_one({}))
+contact_details = func_data['webpageinfo'].find_one({"_id" : 1})
+
+about_details = func_data['webpageinfo'].find_one({"_id" : 2})
+
+home_details = func_data['webpageinfo'].find_one({"_id" : 3})
 
 def index(request):
     
-    return render(request, 'index.html')
+    print("-----------------------HOME-----------------------\n", home_details)
+    return render(request, 'index.html', home_details)
 
 def about(request):
     
-    return render(request, 'about.html')
+    print("-----------------------ABOUT-----------------------\n", about_details)
+    return render(request, 'about.html', about_details)
 
 def contact(request):
-    # fun_data = get_db_handle('127.0.0.1', 27017, context)
-    print(op)
-    print('Inside Contact')
-
+    
+    print("-----------------------Contact Me-----------------------\n", contact_details)
     #rendering the data from mongoDb
-    return render(request, 'contact.html', op)
-
-
-# get_db_handle('127.0.0.1', 27017)
+    return render(request, 'contact.html', contact_details)
