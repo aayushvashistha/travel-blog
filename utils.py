@@ -6,6 +6,6 @@ def get_db_handle(host, port):
                     #   username=username,
                     #   password=password
                      )
- db_handle = client['newdb']
+ db_handle = client['desiwanderer']
  
  return db_handle
