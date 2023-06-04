@@ -3,7 +3,7 @@ sys.path.append("..")
 from django.template.loader import render_to_string
 from django.shortcuts import render
 from utils import get_db_handle
-#from django.http import HttpResponse
+from .models import blog
 
 # Create your views here.
 
