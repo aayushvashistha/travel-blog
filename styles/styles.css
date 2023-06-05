@@ -193,7 +193,7 @@
    text-transform:none
 }
 .x-el-button,.x-el-input[type=button],.x-el-input[type=reset],.x-el-input[type=submit]{
-   -webkit-appearance:button;
+   /* -webkit-appearance:button; */
    cursor:pointer
 }
 .x-el-button[disabled],.x-el-input[disabled]{
@@ -214,7 +214,7 @@
    height:auto
 }
 .x-el-input[type=search]{
-   -webkit-appearance:textfield;
+   /* -webkit-appearance:textfield; */
    box-sizing:content-box
 }
 .x-el-input[type=search]::-webkit-search-cancel-button,.x-el-input[type=search]::-webkit-search-decoration{
