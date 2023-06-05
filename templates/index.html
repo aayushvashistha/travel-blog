@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-CA">
+  {% load static %}
     <head>
         <meta charSet="utf-8"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -269,10 +270,10 @@
                 text-transform: none
             }
 
-            .x-el-button,.x-el-input[type=button],.x-el-input[type=reset],.x-el-input[type=submit] {
+            /* .x-el-button,.x-el-input[type=button],.x-el-input[type=reset],.x-el-input[type=submit] {
                 -webkit-appearance: button;
                 cursor: pointer
-            }
+            } */
 
             .x-el-button[disabled],.x-el-input[disabled] {
                 cursor: default
@@ -295,11 +296,11 @@
             .x-el-input[type=number]::-webkit-inner-spin-button,.x-el-input[type=number]::-webkit-outer-spin-button {
                 height: auto
             }
-
+/* 
             .x-el-input[type=search] {
                 -webkit-appearance: textfield;
                 box-sizing: content-box
-            }
+            } */
 
             .x-el-input[type=search]::-webkit-search-cancel-button,.x-el-input[type=search]::-webkit-search-decoration {
                 -webkit-appearance: none
@@ -2961,7 +2962,9 @@
                                     <div data-ux="Block" class="x-el x-el-div c1-1 c1-2 c1-11 c1-5n c1-b c1-c c1-5o c1-5p c1-d c1-5q c1-e c1-f c1-g">
                                         <div data-ux="Block" class="x-el x-el-div c1-1 c1-2 c1-11 c1-4z c1-5r c1-5s c1-5t c1-5u c1-p c1-b c1-c c1-d c1-5v c1-e c1-f c1-g">
                                             <div data-ux="Block" class="x-el x-el-div c1-1 c1-2 c1-4 c1-b c1-c c1-d c1-e c1-f c1-g">
-                                                <div role="img" data-aid="BACKGROUND_IMAGE_RENDERED" aria-label="" data-ux="Background" data-ht="Fill" mediaType="Image" class="x-el x-el-div c1-1 c1-2 c1-4 c1-5w c1-4s c1-p c1-5x c1-5y c1-5z c1-60 c1-61 c1-b c1-c c1-62 c1-63 c1-64 c1-65 c1-66 c1-67 c1-68 c1-69 c1-6a c1-6b c1-6c c1-6d c1-6e c1-6f c1-6g c1-6h c1-6i c1-6j c1-6k c1-6l c1-6m c1-d c1-6n c1-e c1-f c1-g"></div>
+                                            <div>
+                                              <img src="{% static 'sunset-950x750.jpg' %}" height="400" width="660" alt="">
+                                                <!-- <div role="img" data-aid="BACKGROUND_IMAGE_RENDERED" aria-label="" data-ux="Background" data-ht="Fill" mediaType="Image" class="x-el x-el-div c1-1 c1-2 c1-4 c1-5w c1-4s c1-p c1-5x c1-5y c1-5z c1-60 c1-61 c1-b c1-c c1-62 c1-63 c1-64 c1-65 c1-66 c1-67 c1-68 c1-69 c1-6a c1-6b c1-6c c1-6d c1-6e c1-6f c1-6g c1-6h c1-6i c1-6j c1-6k c1-6l c1-6m c1-d c1-6n c1-e c1-f c1-g"></div> -->
                                             </div>
                                         </div>
                                         <div data-ux="Grid" class="x-el x-el-div c1-1 c1-2 c1-11 c1-6o c1-6p c1-6q c1-12 c1-13 c1-14 c1-15 c1-h c1-37 c1-b c1-c c1-d c1-5v c1-6r c1-6s c1-6t c1-e c1-f c1-g">
@@ -3156,7 +3159,7 @@
                                                 </div>
                                                 <div data-ux="GridCell" class="x-el x-el-div c1-1 c1-2 c1-6o c1-ck c1-6u c1-6v c1-1i c1-37 c1-2u c1-38 c1-2v c1-b c1-c c1-d c1-cl c1-cm c1-e c1-f c1-g">
                                                     <p data-ux="FooterDetails" data-aid="FOOTER_POWERED_BY_RENDERED" data-typography="BodyAlpha" class="x-el x-el-p c1-1 c1-2 c1-1u c1-1b c1-4p c1-80 c1-14 c1-b c1-cn c1-c c1-27 c1-d c1-cp c1-b2 c1-e c1-f c1-g">
-                                                        <span>Developed by &#x27;Hunter &#x27;</span>
+                                                        <span>Developed by DesiWanderer</span>
                                                     </p>
                                                 </div>
                                             </div>
