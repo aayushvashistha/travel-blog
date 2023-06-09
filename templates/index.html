@@ -2965,8 +2965,10 @@
                                             <div>
                                               <br>
                                               <div class="Container">
-                                              <h2 style="text-align: center; color: aliceblue;"> {{ heading }} </h2>
-                                              <p style= "margin-top: 30px; font-size: 27px ;padding: 10px;bottom:-140px;color: aliceblue;"> {{ text }}  </p>
+                                                {% for item in items %}
+                                              <h2 style="text-align: center; color: aliceblue;"> {{ item.heading }} </h2>
+                                              <p style= "margin-top: 30px; font-size: 27px ;padding: 10px;bottom:-140px;color: aliceblue;"> {{ item.text }}  </p>
+                                              {% endfor %}
                                               <img style= "margin-top: 80px;" src="{% static 'blog1.jpg' %}" height="400" width="630" alt="">
                                               </div>
                                                 <!-- <div role="img" data-aid="BACKGROUND_IMAGE_RENDERED" aria-label="" data-ux="Background" data-ht="Fill" mediaType="Image" class="x-el x-el-div c1-1 c1-2 c1-4 c1-5w c1-4s c1-p c1-5x c1-5y c1-5z c1-60 c1-61 c1-b c1-c c1-62 c1-63 c1-64 c1-65 c1-66 c1-67 c1-68 c1-69 c1-6a c1-6b c1-6c c1-6d c1-6e c1-6f c1-6g c1-6h c1-6i c1-6j c1-6k c1-6l c1-6m c1-d c1-6n c1-e c1-f c1-g"></div> -->
@@ -3021,15 +3023,20 @@
                                             <!-- <h2 role="heading" aria-level="2" data-ux="SectionHeading" data-aid="RSS_SECTION_TITLE_RENDERED" data-typography="HeadingBeta" class="x-el x-el-h2 c1-1e c1-1f c1-1u c1-1b c1-al c1-15 c1-13 c1-12 c1-14 c1-77 c1-1h c1-26 c1-21 c1-27 c1-7a c1-78 c1-am c1-7b c1-7c c1-7d"> -->
                                               <!-- <div class="row"> -->
                                               {% for blog in blogs reversed %}
-                                              <a style="text-decoration: none; color: rgb(70, 103, 109);" href="/post/{{ blog.id }}">
-                                              <h2 data-ux="Element2" class="">{{ blog.title }} </h2>
-                                                <!-- <div class="card"> -->
-                                                  <!-- <h2>{{ blog.title }}</h2> -->
-                                                  <h5>{{ blog.created_at }} </h5>
-                                                  <p> {{ blog.body | truncatewords:20 }}</p>
-                                                </a>
-                                                  {% endfor %}
-                                                <!-- </div> -->
+                                              <div style="margin: 20px;" class="card text-center">
+                                                <div class="card-header">
+                                                  Featured
+                                                </div>
+                                                <div class="card-body">
+                                                  <h5 class="card-title">{{ blog.title }}</h5>
+                                                  <p class="card-text">{{ blog.body | truncatewords:20 }}</p>
+                                                  <a style="text-decoration: none; color: rgb(12, 12, 12);" href="/post/{{ blog.id }}" class="btn btn-primary">See more</a>
+                                                </div>
+                                                <div class="card-footer text-muted">
+                                                  {{ blog.created_at }}
+                                                </div>
+                                              </div>
+                                              {% endfor %}
                                         </div>
                                     </div>
                                 </section>

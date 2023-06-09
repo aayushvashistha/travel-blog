@@ -7,32 +7,33 @@ from .models import blog, item
 
 # Create your views here.
 
-func_data = get_db_handle('127.0.0.1', 27017)
+# func_data = get_db_handle('127.0.0.1', 27017)
 
-contact_details = func_data['webpageinfo'].find_one({"_id" : 1})
+# contact_details = func_data['webpageinfo'].find_one({"_id" : 1})
 
-about_details = func_data['webpageinfo'].find_one({"_id" : 2})
+# about_details = func_data['webpageinfo'].find_one({"_id" : 2})
 
-home_details = func_data['webpageinfo'].find_one({"_id" : 3})
+# home_details = func_data['webpageinfo'].find_one({"_id" : 3})
 
 def index(request):
     
     print("-----------------------HOME-----------------------\n")
     blogs = blog.objects.all()
-    items = item.objects.all()
+    items = item.objects.filter(heading='Welcome')
     print(blogs, items)
-    return render(request, 'index.html', {'blogs': blogs})
+    return render(request, 'index.html', {'blogs': blogs, 'items': items})
 
 def about(request):
     
-    print("-----------------------ABOUT-----------------------\n", about_details)
-    return render(request, 'about.html', about_details)
+    print("-----------------------ABOUT-----------------------\n")
+    items = item.objects.filter(heading='About Me')
+    return render(request, 'about.html', {'items': items})
 
 def contact(request):
     
-    print("-----------------------Contact Me-----------------------\n", contact_details)
-    #rendering the data from mongoDb
-    return render(request, 'contact.html', contact_details)
+    print("-----------------------Contact Me-----------------------\n")
+    items = item.objects.filter(heading='Contact Me')
+    return render(request, 'contact.html', {'items': items})
 
 def post(request, pk):
 
