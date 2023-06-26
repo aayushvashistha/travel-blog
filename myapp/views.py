@@ -1,8 +1,10 @@
 import sys
 sys.path.append("..")
-from django.template.loader import render_to_string
-from django.shortcuts import render
-from utils import get_db_handle
+from django.contrib.auth.forms import UserCreationForm
+from . import forms
+from django.contrib.auth import login, authenticate
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, redirect
 from .models import blog, item
 
 # Create your views here.
@@ -15,6 +17,7 @@ from .models import blog, item
 
 # home_details = func_data['webpageinfo'].find_one({"_id" : 3})
 
+# @login_required
 def index(request):
     
     print("-----------------------HOME-----------------------\n")
@@ -40,3 +43,32 @@ def post(request, pk):
     posts = blog.objects.get(id=pk)
     print("-----------------------Post.html---------------------------\n", posts.id)
     return render(request, 'post.html', {'posts': posts})
+
+def login(request):
+    form = forms.LoginForm()
+    message = ''
+    if request.method == 'POST':
+        form = forms.LoginForm(request.POST)
+        if form.is_valid():
+            user = authenticate(
+                username=form.cleaned_data['username'],
+                password=form.cleaned_data['password'],
+            )
+            if user is not None:
+                login(request, user)
+                message = f'Hello {user.username}! You have been logged in'
+            else:
+                message = 'Login failed!'
+    return render(
+        request, 'authentication/login.html', context={'form': form, 'message': message})
+
+def register(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('login.html')
+    else:
+        form = UserCreationForm()
+    return render(request, 'register.html', {'form': form})

@@ -11,7 +11,7 @@ class item(models.Model):
 
 class blog(models.Model):
     title = models.CharField(max_length=100)
-    body = models.CharField(max_length=1000000)
+    body = models.TextField()
     created_at = models.DateTimeField(default=datetime.now, blank=True)
 
     # def __str__(self):
