@@ -1,6 +1,7 @@
 import sys
 sys.path.append("..")
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib import messages
 from . import forms
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
@@ -79,5 +80,6 @@ def subscribe(request):
         email = request.POST.get('email')
         subscriber = Subscriber(email=email)
         subscriber.save()
-        return redirect('success.html')  # Redirect to a success page
+        messages.success(request, "Thank you for subscribing!" )
+        return render(request, 'index.html')  # Redirect to a success page
     return render(request, 'index.html')
