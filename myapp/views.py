@@ -5,7 +5,8 @@ from . import forms
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
-from .models import blog, item
+from .models import blog, item, Subscriber
+from django.urls import reverse
 
 # Create your views here.
 
@@ -72,3 +73,11 @@ def register(request):
     else:
         form = UserCreationForm()
     return render(request, 'register.html', {'form': form})
+
+def subscribe(request):
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        subscriber = Subscriber(email=email)
+        subscriber.save()
+        return redirect('success.html')  # Redirect to a success page
+    return render(request, 'index.html')

@@ -10,6 +10,7 @@
         <link rel="alternate" type="application/atom+xml" href="https://desiwanderer.in/f.atom"/>
         <link rel="alternate" type="application/json" href="https://desiwanderer.in/f.json"/>
         <link rel="alternate" type="application/rss+xml" href="https://desiwanderer.in/f.rss"/>
+        <link rel = "icon" href = "" type = "image/x-icon">
         <meta name="author" content="Traveller"/>
         <link rel="apple-touch-icon" sizes="57x57" href="//img1.wsimg.com/isteam/ip/static/pwa-app/logo-default.png/:/rs=w:57,h:57,m"/>
         <link rel="apple-touch-icon" sizes="60x60" href="//img1.wsimg.com/isteam/ip/static/pwa-app/logo-default.png/:/rs=w:60,h:60,m"/>
@@ -271,7 +272,7 @@
                                                     <div data-ux="Element" id="bs-4" class="x-el x-el-div c1-1 c1-2 c1-b c1-c c1-d c1-e c1-f c1-g">
                                                         <div data-ux="Block" class="x-el x-el-div c1-1 c1-2 c1-3w c1-b c1-c c1-d c1-39 c1-b3 c1-e c1-f c1-g">
                                                             <div data-ux="Block" class="x-el x-el-div c1-1 c1-2 c1-b4 c1-b c1-c c1-d c1-b5 c1-am c1-e c1-f c1-g">
-                                                                <h3 role="heading" aria-level="3" data-ux="HeadingMiddle" data-aid="SECTION_TITLE_REND" data-typography="HeadingGamma" class="x-el x-el-h3 c1-1 c1-2 c1-1u c1-1b c1-8y c1-15 c1-13 c1-12 c1-14 c1-77 c1-b c1-b6 c1-26 c1-27 c1-28 c1-29 c1-2a c1-2b"> <a href="{% url 'register' %}">Join My Mailing List</a></h3>
+                                                                <h3 role="heading" aria-level="3" data-ux="HeadingMiddle" data-aid="SECTION_TITLE_REND" data-typography="HeadingGamma" class="x-el x-el-h3 c1-1 c1-2 c1-1u c1-1b c1-8y c1-15 c1-13 c1-12 c1-14 c1-77 c1-b c1-b6 c1-26 c1-27 c1-28 c1-29 c1-2a c1-2b">Join My Mailing List</h3>
                                                             </div>
                                                             <div data-ux="Block" data-aid="SUBSCRIBE_INNER_FORM_REND" class="x-el x-el-div c1-1 c1-2 c1-5s c1-b c1-c c1-d c1-e c1-f c1-g">
                                                                 <form aria-live="polite" data-ux="InputGroup" class="x-el x-el-form x-el c1-1 c1-2 c1-b c1-c c1-d c1-e c1-f c1-g c1-1 c1-2 c1-14 c1-b c1-c c1-d c1-e c1-f c1-g">
@@ -282,8 +283,10 @@
                                                                                 <label data-ux="InputFloatLabelLabel" for="input42869" data-typography="InputAlpha" class="x-el x-el-label c1-1 c1-2 c1-1g c1-1u c1-1b c1-2f c1-bx c1-by c1-bz c1-c0 c1-b c1-c1 c1-1j c1-27 c1-bw c1-1n c1-1o c1-1p c1-1q">Email Address</label>
                                                                             </div>
                                                                         </div>
-                                                                        <a href="{% url 'register' %}">Register</a>
-                                                                        <button data-ux-btn="primary" data-ux="ButtonPrimary" type="submit" data-tccl="ux2.gem-subscribe.submit_form.click,click" data-aid="SUBSCRIBE_SUBMIT_BUTTON_REND" data-typography="ButtonAlpha" class="x-el x-el-button c1-3v c1-1f c1-4 c1-15 c1-13 c1-1w c1-83 c1-84 c1-z c1-6x c1-77 c1-1t c1-1b c1-1u c1-p c1-1i c1-3r c1-85 c1-86 c1-87 c1-88 c1-89 c1-8a c1-8b c1-b c1-3y c1-61 c1-1j c1-8c c1-c2 c1-c3 c1-b9 c1-ba c1-c4 c1-8d c1-1n c1-1o c1-1p c1-1q">Sign up</button>
+                                                                        <!-- <a href="{% url 'register' %}">Register</a> -->
+                                                                        <form method="post" action="{% url 'subscribe' %}">
+                                                                            <!-- {% csrf_token %} -->
+                                                                            <button data-ux-btn="primary" data-ux="ButtonPrimary" type="submit" data-tccl="ux2.gem-subscribe.submit_form.click,click" data-aid="SUBSCRIBE_SUBMIT_BUTTON_REND" data-typography="ButtonAlpha" class="x-el x-el-button c1-3v c1-1f c1-4 c1-15 c1-13 c1-1w c1-83 c1-84 c1-z c1-6x c1-77 c1-1t c1-1b c1-1u c1-p c1-1i c1-3r c1-85 c1-86 c1-87 c1-88 c1-89 c1-8a c1-8b c1-b c1-3y c1-61 c1-1j c1-8c c1-c2 c1-c3 c1-b9 c1-ba c1-c4 c1-8d c1-1n c1-1o c1-1p c1-1q">Sign up</button></form>
                                                                     </div>
                                                                 </form>
                                                             </div>
@@ -291,32 +294,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                </section>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="d5e3f288-18cc-4efa-94b6-dcf04efd1099" class="widget widget-social widget-social-social-1">
-                        <div data-ux="Widget" role="region" id="d5e3f288-18cc-4efa-94b6-dcf04efd1099" class="x-el x-el-div x-el c1-1 c1-2 c1-3 c1-b c1-c c1-d c1-e c1-f c1-g c1-1 c1-2 c1-b c1-c c1-d c1-e c1-f c1-g">
-                            <div>
-                                <section data-ux="Section" class="x-el x-el-section c1-1 c1-2 c1-3 c1-i c1-j c1-b c1-c c1-l c1-m c1-d c1-e c1-f c1-g">
-                                    <div data-ux="Container" class="x-el x-el-div c1-1 c1-2 c1-35 c1-36 c1-s c1-t c1-1i c1-37 c1-38 c1-b c1-c c1-59 c1-d c1-5a c1-e c1-5b c1-f c1-5c c1-g">
-                                        <div data-ux="Intro" class="x-el x-el-div x-el c1-1 c1-2 c1-ak c1-77 c1-b c1-c c1-d c1-e c1-f c1-g c1-1 c1-2 c1-b c1-c c1-d c1-e c1-f c1-g">
-                                            <h2 role="heading" aria-level="2" data-ux="SectionHeading" data-typography="HeadingBeta" class="x-el x-el-h2 c1-1e c1-1f c1-1u c1-1b c1-al c1-15 c1-13 c1-12 c1-14 c1-77 c1-1h c1-26 c1-21 c1-27 c1-7a c1-78 c1-am c1-7b c1-7c c1-7d">
-                                                <span data-ux="Element" class=""></span>
-                                            </h2>
-                                        </div>
-                                        <div data-ux="Block" data-aid="SOCIAL_SOCIAL_LINKS" class="x-el x-el-div c1-1 c1-2 c1-11 c1-6x c1-c5 c1-c6 c1-37 c1-38 c1-6q c1-c7 c1-c8 c1-b c1-c c1-d c1-e c1-f c1-g">
-                                            <a rel="noopener" role="link" aria-haspopup="true" data-ux="Link" target="_blank" data-aid="SOCIAL_LINKEDIN_LINK" aria-label="LinkedIn Social Link" href="https://www.linkedin.com/in/aayush-vashistha/" data-typography="LinkAlpha" class="x-el x-el-a c1-1r c1-1s c1-1t c1-1u c1-1b c1-1v c1-1w c1-c9 c1-b c1-21 c1-c c1-22 c1-23 c1-24 c1-d c1-e c1-f c1-g" data-tccl="ux2.SOCIAL.social1.Section.Default.Link.Default.42870.click,click">
-                                                <svg viewBox="0 0 24 24" fill="currentColor" width="40" height="40" data-ux="IconSocial" class="x-el x-el-svg c1-1 c1-2 c1-2x c1-1g c1-48 c1-ca c1-cb c1-4n c1-b c1-c c1-cc c1-cd c1-d c1-ce c1-cf c1-cg c1-b5 c1-6t c1-ch c1-ci c1-cj c1-e c1-f c1-g">
-                                                    <g>
-                                                        <path d="M12 2c5.523 0 10 4.476 10 10 0 5.523-4.477 10-10 10-5.522 0-10-4.477-10-10C2 6.478 6.478 2 12 2z" fill="#2867B2"></path>
-                                                        <path d="M16.926 6H6.871C6.391 6 6 6.38 6 6.85v10.098c0 .47.39.852.871.852h10.056a.864.864 0 00.873-.852V6.85a.863.863 0 00-.874-.85z" fill="#fff"></path>
-                                                        <path d="M7.75 10.424h1.753v5.63H7.75v-5.63zm.875-2.803a1.015 1.015 0 11-.002 2.03 1.015 1.015 0 01.002-2.03m1.973 2.803h1.678v.77h.024c.233-.443.804-.91 1.66-.91 1.771 0 2.098 1.166 2.098 2.682v3.089H14.31v-2.74c0-.652-.011-1.493-.909-1.493-.91 0-1.05.712-1.05 1.446v2.785H10.6v-5.63h-.002z" fill="#2867B2"></path>
-                                                    </g>
-                                                </svg>
-                                            </a>
                                         </div>
                                     </div>
                                 </section>
@@ -334,6 +311,24 @@
                                                     <div data-ux="FooterDetails" data-aid="FOOTER_COPYRIGHT_RENDERED" data-typography="BodyAlpha" class="x-el c1-1 c1-2 c1-1u c1-1b c1-4p c1-12 c1-14 c1-b c1-cn c1-c c1-27 c1-d c1-co c1-e c1-f c1-g x-rt">
                                                         <p style="margin:0">
                                                             <span>Copyright © 2023- All Rights Reserved.</span>
+                                                            <p>
+                                                                <br/>
+                                                                <a style="text-decoration: none;" href="mailto:contact@desiwanderer.in">
+                                                                  <ion-icon size="large" name="mail-outline"></ion-icon>
+                                                                </a> &nbsp; 
+                                                                <a href="https://github.com/aayushvashistha">
+                                                                  <ion-icon size="large" name="logo-github"></ion-icon>
+                                                                </a> &nbsp;
+                                                                <a href="https://github.com/aayushvashistha">
+                                                                    <ion-icon size="large" name="logo-instagram"></ion-icon>
+                                                                </a> &nbsp;
+                                                                <a href="https://github.com/aayushvashistha">
+                                                                    <ion-icon size="large" name="logo-twitter"></ion-icon>
+                                                                </a>
+                                                                <a href="https://github.com/aayushvashistha">
+                                                                    <ion-icon size="large" name="logo-facebook"></ion-icon>
+                                                                </a>
+                                                              </p>
                                                         </p>
                                                     </div>
                                                 </div>
@@ -433,5 +428,7 @@
         <script src="//img1.wsimg.com/ceph-p3-01/website-builder-data-prod/static/widgets/UX.4.32.2.js" crossorigin></script>
         <script src="//img1.wsimg.com/blobby/go/045815d5-2dad-4918-a07c-5e012ebb8f1b/gpub/d1ea1263667a988f/script.js" crossorigin></script>
         <script defer src="//img1.wsimg.com/traffic-assets/js/tccl.min.js" crossorigin></script>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     </body>
 </html>
