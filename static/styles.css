@@ -440,7 +440,11 @@
                     font-family:sans-serif!important
                 }
             }
-        
+            
+            .info-msg {
+               color: rgb(146, 187, 221);
+               background-color: transparent;
+             }
 
          data-glamor="cxs-default-sheet">
             .x .c1-1 {

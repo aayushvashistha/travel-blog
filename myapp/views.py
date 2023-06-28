@@ -3,10 +3,11 @@ sys.path.append("..")
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from . import forms
+from django.db import IntegrityError
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
-from .models import blog, item, Subscriber
+from .models import blog, item, Subscriber, write
 from django.urls import reverse
 
 # Create your views here.
@@ -76,10 +77,30 @@ def register(request):
     return render(request, 'register.html', {'form': form})
 
 def subscribe(request):
-    if request.method == 'POST':
-        email = request.POST.get('email')
-        subscriber = Subscriber(email=email)
-        subscriber.save()
-        messages.success(request, "Thank you for subscribing!" )
-        return render(request, 'index.html')  # Redirect to a success page
-    return render(request, 'index.html')
+    try:
+        if request.method == 'POST':
+            email = request.POST.get('email')
+            subscriber = Subscriber(email=email)
+            subscriber.save()
+            messages.success(request, "Thank you for subscribing!" )
+            return redirect('index')  # Redirect to a success page
+    except IntegrityError as e:
+        e = "You are already subscribed"
+        messages.error(request, e)
+        return redirect("index")
+    # messages.error(request, "Error in subscribing")
+    # return render(request, 'contact.html')
+
+def writeToUs(request):
+    try:
+        if request.method == 'POST':
+            fullname = request.POST.get('fullname')
+            email = request.POST.get('email')
+            message = request.POST.get('message')
+            print(email)
+            data = write.objects.create(fullname=fullname,email=email,message=message)
+            # data.save()
+            messages.success(request, "Thanks for sending us a message. We will reach out to you shortly!" )
+            return redirect('contact')  # Redirect to a success page
+    except:
+        return redirect("index")
