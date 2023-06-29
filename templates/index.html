@@ -234,7 +234,7 @@
                     <div id="f193be48-0795-4d80-a0c2-8b32598306ef" class="widget widget-rss widget-rss-rss-3">
                         <div data-ux="Widget" role="region" id="f193be48-0795-4d80-a0c2-8b32598306ef" class="x-el x-el-div x-el c1-1 c1-2 c1-3 c1-b c1-c c1-d c1-e c1-f c1-g c1-1 c1-2 c1-b c1-c c1-d c1-e c1-f c1-g">
                             <div>
-                                <section data-ux="Section" class="x-el x-el-section c1-1 c1-2 c1-3 c1-i c1-j c1-b c1-c c1-l c1-m c1-d c1-e c1-f c1-g">
+                                <section data-ux="Section" class="x-el-section c1-1 c1-2 c1-3 c1-i c1-j c1-b c1-c c1-l c1-m c1-d c1-e c1-f c1-g">
                                     <div data-ux="Container" class="x-el x-el-div c1-1 c1-2 c1-35 c1-36 c1-s c1-t c1-1i c1-b c1-c c1-59 c1-d c1-5a c1-e c1-5b c1-f c1-5c c1-g">
                                         <div data-ux="Intro" class="x-el x-el-div x-el c1-1 c1-2 c1-ak c1-77 c1-b c1-c c1-d c1-e c1-f c1-g c1-1 c1-2 c1-b c1-c c1-d c1-e c1-f c1-g">
                                             <!-- <h2 role="heading" aria-level="2" data-ux="SectionHeading" data-aid="RSS_SECTION_TITLE_RENDERED" data-typography="HeadingBeta" class="x-el x-el-h2 c1-1e c1-1f c1-1u c1-1b c1-al c1-15 c1-13 c1-12 c1-14 c1-77 c1-1h c1-26 c1-21 c1-27 c1-7a c1-78 c1-am c1-7b c1-7c c1-7d"> -->
@@ -243,6 +243,9 @@
                                               <div style="margin: 20px;" class="card text-center">
                                                 <div class="card-header">
                                                   Featured
+                                                </div>
+                                                <div>
+                                                    <img style= "margin-left: 50px;" src= "{{ blog.image }}" alt="Image Not Available">
                                                 </div>
                                                 <div class="card-body">
                                                   <h5 class="card-title">{{ blog.title }}</h5>
@@ -386,7 +389,8 @@
                 </div>
             </div>
         </div>
-        <div class="modal fade" id="ContactForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        {% include 'form.html' %}
+        <!-- <div class="modal fade" id="ContactForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content"></br>
         <div class="form-container">
@@ -414,7 +418,7 @@
       
     </div>
   </div>
-</div>
+</div> -->
         <script type="text/javascript">
             "IntersectionObserver"in window && "Intl"in window && "Locale"in window.Intl || document.write(`\x3Cscript src="https://img1.wsimg.com/poly/v3/polyfill.min.js?rum=0&unknown=polyfill&flags=gated&features=Intl.~locale.en-CA">\x3C/script>`)
         </script>

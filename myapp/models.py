@@ -8,8 +8,12 @@ class item(models.Model):
     heading = models.CharField(max_length=25)
     text = models.CharField(max_length=10000)
 
+    def __str__(self):
+        return self.heading
+
 
 class blog(models.Model):
+    image = models.ImageField(upload_to='images')
     title = models.CharField(max_length=100)
     body = models.TextField()
     created_at = models.DateTimeField(default=datetime.now, blank=True)
@@ -26,7 +30,7 @@ class Subscriber(models.Model):
     
 class write(models.Model):
     fullname = models.CharField(max_length=50)
-    email = models.EmailField(unique=True)
+    email = models.EmailField()
     message = models.TextField()
 
     def __str__(self):

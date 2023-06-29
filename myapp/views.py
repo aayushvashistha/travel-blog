@@ -10,16 +10,6 @@ from django.shortcuts import render, redirect
 from .models import blog, item, Subscriber, write
 from django.urls import reverse
 
-# Create your views here.
-
-# func_data = get_db_handle('127.0.0.1', 27017)
-
-# contact_details = func_data['webpageinfo'].find_one({"_id" : 1})
-
-# about_details = func_data['webpageinfo'].find_one({"_id" : 2})
-
-# home_details = func_data['webpageinfo'].find_one({"_id" : 3})
-
 # @login_required
 def index(request):
     
@@ -82,6 +72,7 @@ def subscribe(request):
             email = request.POST.get('email')
             subscriber = Subscriber(email=email)
             subscriber.save()
+            print("-----------------------User subscribed---------------------------\n", subscriber.email)
             messages.success(request, "Thank you for subscribing!" )
             return redirect('index')  # Redirect to a success page
     except IntegrityError as e:
@@ -99,8 +90,10 @@ def writeToUs(request):
             message = request.POST.get('message')
             print(email)
             data = write.objects.create(fullname=fullname,email=email,message=message)
+            print("-----------------------Write To Us Form---------------------------\n", data.email)
             # data.save()
             messages.success(request, "Thanks for sending us a message. We will reach out to you shortly!" )
-            return redirect('contact')  # Redirect to a success page
+            return redirect('contact')
     except:
-        return redirect("index")
+        # messages.error(request, "Please send the message from different email id" )
+        return redirect('index')

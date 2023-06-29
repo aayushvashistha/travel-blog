@@ -440,10 +440,45 @@
                     font-family:sans-serif!important
                 }
             }
-            
+
             .info-msg {
                color: rgb(146, 187, 221);
                background-color: transparent;
+             }
+             .form-container {
+               max-width: 500px;
+               margin: auto;
+             }
+             .form-group {
+               margin-bottom: 20px;
+             }
+             .form-group label {
+               display: block;
+               font-weight: bold;
+               margin-bottom: 5px;
+             }
+             .form-group input,
+             .form-group textarea {
+               width: 100%;
+               padding: 10px;
+               font-size: 16px;
+               border-radius: 5px;
+               border: 1px solid #ccc;
+             }
+             .form-group textarea {
+               resize: vertical;
+               height: 120px;
+             }
+             .form-group button {
+               padding: 10px 20px;
+               background-color: #4CAF50;
+               color: #fff;
+               border: none;
+               border-radius: 5px;
+               cursor: pointer;
+             }
+             .form-group button:hover {
+               background-color: #45a049;
              }
 
          data-glamor="cxs-default-sheet">
