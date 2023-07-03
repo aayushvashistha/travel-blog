@@ -15,7 +15,7 @@ def index(request):
     
     print("-----------------------HOME-----------------------\n")
     blogs = blog.objects.all()
-    items = item.objects.filter(heading='Welcome')
+    items = item.objects.filter(heading='Welcome to Desi Wanderer!')
     print(blogs, items)
     return render(request, 'index.html', {'blogs': blogs, 'items': items})
 

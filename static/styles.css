@@ -1,4 +1,5 @@
-            /* latin-ext */
+
+
             @font-face {
                 font-family: 'Righteous';
                 font-style: normal;
@@ -481,7 +482,7 @@
                background-color: #45a049;
              }
 
-         data-glamor="cxs-default-sheet">
+         
             .x .c1-1 {
                 letter-spacing: normal
             }
@@ -1814,7 +1815,7 @@
                 background-color: rgb(255, 255, 255)
             }
         
-         data-glamor="cxs-media-sheet">
+         /* data-glamor="cxs-media-sheet">
             @media (max-width: 450px) {
                 .x .c1-62 {
                     background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%), url("//img1.wsimg.com/isteam/videos/uGbA6v1EwwF20VGXJ/:/rs=w:450,m")
@@ -2072,7 +2073,7 @@
                 .x .c1-l {
                     padding-top:40px
                 }
-            }
+            } */
 
             @media (max-width: 767px) {
                 .x .c1-m {
@@ -2821,3 +2822,30 @@
                 visibility: hidden;
             }
         
+            .carousel-item{
+                height: 800px;
+                
+            } 
+            .carousel-item img{
+                display: block;
+                height: auto;
+                max-width: 100%;
+                line-height: 1;
+                width: 100%; 
+                }
+                @media screen and (min-width: 1400px) {
+                    .carousel-item img {
+                      height: 1370px;
+                    }
+                  }
+                  @media screen and (min-width: 1600px) {
+                    .carousel-item img {
+                        height: 1570px;
+                    }
+                  }
+                  @media screen and (min-width: 1900px) {
+                    .carousel-item img {
+                        height: 1870px;
+                    }
+                  }
+            
