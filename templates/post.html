@@ -49,7 +49,70 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     </head>
-    
+    <style>
+        body {
+  font-family: sans-serif;
+  color: #222;
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 0.35em;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+p {
+  margin: 0 0 1.15em;
+}
+
+p + h2 {
+  margin-top: 1.5em;
+}
+
+.container {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 24px;
+}
+
+header {
+  background-color: rebeccapurple;
+  color: #fff;
+}
+
+body > footer {
+  border-top: 2px solid rebeccapurple;
+}
+
+blockquote {
+  background: linear-gradient(45deg, #eddbff, transparent);
+  color: rebeccapurple;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 1em;
+  border-radius: 4px;
+}
+
+.img--align-left {
+  float: left; /* replaces the style previously inherited by the browser */
+  margin: 0 16px 16px -20px;
+  border-radius: 50%;
+}
+    </style>
     <body class="x  x-fonts-righteous">
         
         <div id="layout-045815-d-5-2-dad-4918-a-07-c-5-e-012-ebb-8-f-1-b" class="layout layout-layout layout-layout-layout-9 locale-en-CA lang-en">
@@ -118,14 +181,14 @@
                                                                         <li data-ux="ListItemInline" class="x-el x-el-li nav-item c1-1 c1-2 c1-3o c1-15 c1-3p c1-1g c1-3q c1-30 c1-3r c1-3s c1-p c1-2e c1-b c1-c c1-3t c1-3u c1-d c1-e c1-f c1-g">
                                                                             <a rel="" role="link" aria-haspopup="false" data-ux="NavLink" target="" data-page="61521ac4-6e7e-4b52-a4b6-5b8a46b71b15" data-edit-interactive="true" href="/contact" data-typography="NavAlpha" class="x-el x-el-a c1-3v c1-1f c1-1t c1-1u c1-1b c1-3w c1-1w c1-42 c1-43 c1-44 c1-45 c1-34 c1-32 c1-31 c1-33 c1-b c1-2x c1-c c1-3y c1-23 c1-41 c1-d c1-e c1-f c1-g" data-tccl="ux2.HEADER.header9.Nav.Default.Link.Default.42857.click,click">Contact</a>
                                                                         </li>
-                                                                        <li data-ux="ListItemInline" class="x-el x-el-li nav-item c1-1 c1-2 c1-3o c1-15 c1-3p c1-1g c1-3q c1-30 c1-3r c1-3s c1-p c1-2e c1-b c1-c c1-3t c1-3u c1-d c1-e c1-f c1-g">
+                                                                        <!-- <li data-ux="ListItemInline" class="x-el x-el-li nav-item c1-1 c1-2 c1-3o c1-15 c1-3p c1-1g c1-3q c1-30 c1-3r c1-3s c1-p c1-2e c1-b c1-c c1-3t c1-3u c1-d c1-e c1-f c1-g">
                                                                             {% if user.is_authenticated %}
                                                                             <a rel="" role="link" aria-haspopup="false" data-ux="NavLink" target="" data-page="2dbc3c68-54c1-4511-8f4b-14af5ec7c5f0" data-edit-interactive="true" href="{% url 'logout' %}" data-typography="NavAlpha" class="x-el x-el-a c1-3v c1-1f c1-1t c1-1u c1-1b c1-3w c1-1w c1-3x c1-b c1-2x c1-c c1-3y c1-3z c1-40 c1-23 c1-41 c1-d c1-e c1-f c1-g" data-tccl="ux2.HEADER.header9.Nav.Default.Link.Active.42855.click,click">Logout</a>
                                                                             {% else %}
                                                                             <a rel="" role="link" aria-haspopup="false" data-ux="NavLink" target="" data-page="2d6cd8f2-e19f-405d-99e0-6ff48d28dcb4" data-edit-interactive="true" href="{% url 'login' %}" data-typography="NavAlpha" class="x-el x-el-a c1-3v c1-1f c1-1t c1-1u c1-1b c1-3w c1-1w c1-42 c1-43 c1-44 c1-45 c1-34 c1-32 c1-31 c1-33 c1-b c1-2x c1-c c1-3y c1-23 c1-41 c1-d c1-e c1-f c1-g" data-tccl="ux2.HEADER.header9.Nav.Default.Link.Default.42856.click,click">Login</a>
                                                                             {% endif %}
                                                                             
-                                                                        </li>
+                                                                        </li> -->
                                                                         <li data-ux="ListItemInline" class="x-el x-el-li nav-item c1-1 c1-2 c1-3o c1-15 c1-3p c1-1g c1-3q c1-30 c1-3r c1-3s c1-p c1-2e c1-b c1-c c1-3t c1-3u c1-d c1-e c1-f c1-g">
                                                                             <div data-ux="Element" id="bs-2" class="x-el x-el-div c1-1 c1-2 c1-b c1-c c1-d c1-e c1-f c1-g">
                                                                                 <a rel="" role="button" aria-haspopup="menu" data-ux="NavLinkDropdown" data-toggle-ignore="true" id="42858" aria-expanded="false" data-aid="NAV_MORE" data-edit-interactive="true" href="#" data-typography="NavAlpha" class="x-el x-el-a c1-3v c1-1f c1-1t c1-1u c1-1b c1-11 c1-1w c1-z c1-b c1-2x c1-c c1-3y c1-23 c1-41 c1-d c1-e c1-f c1-g" data-tccl="ux2.HEADER.header9.Nav.Default.Link.Dropdown.42859.click,click">
@@ -187,14 +250,55 @@
                                             </div>
                                         </div>
                                     </div>
-                                    </br></br>
-                                    <div style="width: 50%; text-align: center; " class="card mb-2 mx-auto">
+                                    <!-- </br></br> -->
+                                    <div class="card mb-2 mx-auto">
+                                    </br>
+                                        <h1 style="text-align: center; border: none;">{{ posts.title }}</h1>
+                                        <p style="text-align: center;">
+                                          <small>By <em>Stephanie Eckles</em> | Posted on:
+                                            <em>{{ posts.created_at}}</em></small>
+                                        </p>
+                                        <article class="container">
+                                            <img src="https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8M3x8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Paris" class="img--align-left" />
+                                            <h2>Topic Introduction</h2>
+                                            <p>
+                                              Liquorice candy macaroon soufflé jelly cake. Candy canes marzipan.
+                                              Macaroon pie sesame snaps jelly-o.
+                                            </p>
+                                            <p>
+                                              Liquorice candy macaroon soufflé jelly cake. Candy canes ice cream
+                                              biscuit marzipan.
+                                            </p>
+                                            <h2>The Main Topic</h2>
+                                            <p>
+                                                {{ posts.body }}
+                                            </p>
+                                            <p>
+                                              Liquorice candy macaroon soufflé jelly cake. Candy canes ice. Macaroon
+                                              pie sesame snaps jelly-o.
+                                            </p>
+                                            <h3>A subtopic to the main one</h3>
+                                            <p>
+                                              Candy canes ice cream biscuit marzipan. Macaroon pie sesame snaps
+                                              jelly-o.
+                                            </p>
+                                            <p>
+                                              Liquorice candy macaroon soufflé jelly cake. Macaroon pie sesame snaps
+                                              jelly-o.
+                                            </p>
+                                            <blockquote>
+                                              <p>"Here's a fabulous thing someone said."</p>
+                                              <footer>- <cite>Someone Awesome</cite></footer>
+                                            </blockquote>
+                                          </article>
+                                      </div>
+                                    <!-- <div style="width: 50%; text-align: center; " class="card mb-2 mx-auto">
                                         <div class="card-body">
                                           <h1 class="card-title">{{ posts.title }}</h1>
                                           <h3 class="card-text">{{ posts.created_at}}</h3>
                                           <p style="font-size: 20px;" class="card-text"> {{ posts.body }}</p>
                                         </div>
-                                      </div>
+                                      </div> -->
                                     </br>
                
                     <div id="b40efa80-968e-417a-9960-a54d4e76c7f9" class="widget widget-subscribe widget-subscribe-subscribe-2">
@@ -255,19 +359,19 @@
                                                         <p style="margin:0">
                                                             <p>
                                                                 <a style="text-decoration: none;" href="mailto:contact@desiwanderer.in">
-                                                                  <ion-icon size="large" name="mail-outline"></ion-icon>
+                                                                  <ion-icon size="large" name="mail-outline" color="primary"></ion-icon>
                                                                 </a> &nbsp; 
                                                                 <a style="text-decoration: none;" href="https://github.com/aayushvashistha">
-                                                                  <ion-icon size="large" name="logo-github"></ion-icon>
+                                                                  <ion-icon size="large" name="logo-github" color="primary"></ion-icon>
                                                                 </a> &nbsp;
                                                                 <a style="text-decoration: none;" href="https://github.com/aayushvashistha">
-                                                                    <ion-icon size="large" name="logo-instagram"></ion-icon>
+                                                                    <ion-icon size="large" name="logo-instagram" color="primary"></ion-icon>
                                                                 </a> &nbsp;
                                                                 <a style="text-decoration: none;" href="https://github.com/aayushvashistha">
-                                                                    <ion-icon size="large" name="logo-twitter"></ion-icon>
+                                                                    <ion-icon size="large" name="logo-twitter" color="primary"></ion-icon>
                                                                 </a>&nbsp;
                                                                 <a style="text-decoration: none;" href="https://github.com/aayushvashistha">
-                                                                    <ion-icon size="large" name="logo-facebook"></ion-icon>
+                                                                    <ion-icon size="large" name="logo-facebook" color="primary"></ion-icon>
                                                                 </a>
                                                               </p></br>
                                                               <span>Copyright © 2023- All Rights Reserved.</span>

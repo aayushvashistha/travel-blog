@@ -55,6 +55,7 @@
         
         <div id="layout-045815-d-5-2-dad-4918-a-07-c-5-e-012-ebb-8-f-1-b" class="layout layout-layout layout-layout-layout-9 locale-en-CA lang-en">
             <div data-ux="Page" id="page-42839" class="x-el x-el-div x-el c1-1 c1-2 c1-3 c1-4 c1-5 c1-6 c1-7 c1-8 c1-9 c1-a c1-b c1-c c1-d c1-e c1-f c1-g c1-1 c1-2 c1-b c1-c c1-d c1-e c1-f c1-g">
+                {% for item in items %}
                 <div data-ux="Block" class="x-el x-el-div page-inner c1-1 c1-2 c1-b c1-c c1-d c1-e c1-f c1-g">
                     <div id="fbdec8e3-e483-4850-9e5e-d0c2f6f0ccd6" class="widget widget-header widget-header-header-9">
                         <div data-ux="Header" role="main" data-aid="HEADER_WIDGET" id="n-42840" class="x-el x-el-div x-el x-el c1-1 c1-2 c1-b c1-c c1-d c1-e c1-f c1-g c1-1 c1-2 c1-h c1-b c1-c c1-d c1-e c1-f c1-g c1-1 c1-2 c1-b c1-c c1-d c1-e c1-f c1-g">
@@ -120,11 +121,11 @@
                                                                             <a rel="" role="link" aria-haspopup="false" data-ux="NavLink" target="" data-page="61521ac4-6e7e-4b52-a4b6-5b8a46b71b15" data-edit-interactive="true" href="/contact" data-typography="NavAlpha" class="x-el x-el-a c1-3v c1-1f c1-1t c1-1u c1-1b c1-3w c1-1w c1-42 c1-43 c1-44 c1-45 c1-34 c1-32 c1-31 c1-33 c1-b c1-2x c1-c c1-3y c1-23 c1-41 c1-d c1-e c1-f c1-g" data-tccl="ux2.HEADER.header9.Nav.Default.Link.Default.42857.click,click">Contact</a>
                                                                         </li>
                                                                         <li data-ux="ListItemInline" class="x-el x-el-li nav-item c1-1 c1-2 c1-3o c1-15 c1-3p c1-1g c1-3q c1-30 c1-3r c1-3s c1-p c1-2e c1-b c1-c c1-3t c1-3u c1-d c1-e c1-f c1-g">
-                                                                            {% if user.is_authenticated %}
+                                                                            <!-- {% if user.is_authenticated %}
                                                                             <a rel="" role="link" aria-haspopup="false" data-ux="NavLink" target="" data-page="2dbc3c68-54c1-4511-8f4b-14af5ec7c5f0" data-edit-interactive="true" href="{% url 'logout' %}" data-typography="NavAlpha" class="x-el x-el-a c1-3v c1-1f c1-1t c1-1u c1-1b c1-3w c1-1w c1-3x c1-b c1-2x c1-c c1-3y c1-3z c1-40 c1-23 c1-41 c1-d c1-e c1-f c1-g" data-tccl="ux2.HEADER.header9.Nav.Default.Link.Active.42855.click,click">Logout</a>
                                                                             {% else %}
                                                                             <a rel="" role="link" aria-haspopup="false" data-ux="NavLink" target="" data-page="2d6cd8f2-e19f-405d-99e0-6ff48d28dcb4" data-edit-interactive="true" href="{% url 'login' %}" data-typography="NavAlpha" class="x-el x-el-a c1-3v c1-1f c1-1t c1-1u c1-1b c1-3w c1-1w c1-42 c1-43 c1-44 c1-45 c1-34 c1-32 c1-31 c1-33 c1-b c1-2x c1-c c1-3y c1-23 c1-41 c1-d c1-e c1-f c1-g" data-tccl="ux2.HEADER.header9.Nav.Default.Link.Default.42856.click,click">Login</a>
-                                                                            {% endif %}
+                                                                            {% endif %} -->
                                                                             
                                                                         </li>
                                                                         <li data-ux="ListItemInline" class="x-el x-el-li nav-item c1-1 c1-2 c1-3o c1-15 c1-3p c1-1g c1-3q c1-30 c1-3r c1-3s c1-p c1-2e c1-b c1-c c1-3t c1-3u c1-d c1-e c1-f c1-g">
@@ -230,58 +231,57 @@
                                             </div>
                                         </div> -->
                                     <!-- </div> -->
-                                    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-                                        <div class="carousel-indicators">
-                                          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                                          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                                          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                                        </div>
-                                        {% for item in items %}
+                                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                                        <!-- Indicators -->
+                                        <ol class="carousel-indicators">
+                                          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                          <li data-target="#myCarousel" data-slide-to="1"></li>
+                                          <li data-target="#myCarousel" data-slide-to="2"></li>
+                                        </ol>
+                                        
                                         <div class="carousel-inner">
-                                          <div class="carousel-item active" data-bs-interval="10000">
-                                            <img src="{% static 'blog1.jpg' %}" class="d-block w-100" alt="...">
+                                          <div class="carousel-item active" data-bs-interval="4000">
+                                            <img src="{% static 'blog1.jpg' %}" class="d-block w-100 h-100" alt="...">
                                             <div class="carousel-caption d-none d-md-block">
-                                                <h2 style="text-align: center; color: aliceblue;"> {{ item.heading }} </h2>
-                                                <p style= "margin-top: 30px; font-size: 27px ;padding: 10px;bottom:-140px;color: aliceblue;"> {{ item.text }}  </p>
+                                                <h2 style="text-align: center; color: aliceblue;"> Edinburg </h2>
+                                                <p style= "margin-top: 30px; font-size: 27px ;padding: 10px;bottom:-140px;color: aliceblue;"> City of old architectures  </p>
                                             </div>
                                           </div>
-                                          <div class="carousel-item" data-bs-interval="2000">
-                                            <img src="{% static 'AboutMe.jpg' %}" class="d-block w-100" alt="...">
+                                          <div class="carousel-item" data-bs-interval="5000">
+                                            <img src="{% static 'AboutMe.jpg' %}" class="d-block w-100 h-100" alt="...">
                                             <div class="carousel-caption d-none d-md-block">
-                                              <h5>Second slide label</h5>
-                                              <p>Some representative placeholder content for the second slide.</p>
+                                                <h2 style="text-align: center; color: aliceblue;"> London </h2>
+                                                <p style= "margin-top: 30px; font-size: 27px ;padding: 10px;bottom:-140px;color: aliceblue;"> Who doesn't know about famous London Bridge  </p>
                                             </div>
                                           </div>
-                                          <div class="carousel-item">
-                                            <img src="{% static 'sunset.jpg' %}" class="d-block w-100" alt="...">
+                                          <div class="carousel-item" data-bs-interval="3000">
+                                            <img src="{% static 'sunset.jpg' %}" class="d-block w-100 h-100" alt="...">
                                             <div class="carousel-caption d-none d-md-block">
-                                              <h5>Third slide label</h5>
-                                              <p>Some representative placeholder content for the third slide.</p>
+                                                <h2 style="text-align: center; color: aliceblue;"> Sunset </h2>
+                                                <p style= "margin-top: 30px; font-size: 27px ;padding: 10px;bottom:-140px;color: aliceblue;"> Beautiful sunset in Scotland  </p>
                                             </div>
                                           </div>
                                         </div>
-                                        {% endfor %}
-                                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-                                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                          <span class="visually-hidden">Previous</span>
-                                        </button>
-                                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-                                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                          <span class="visually-hidden">Next</span>
-                                        </button>
+                                        
+                                        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                                            <span class="glyphicon glyphicon-chevron-left"></span>
+                                            <span class="sr-only">Previous</span>
+                                          </a>
+                                          <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                                            <span class="glyphicon glyphicon-chevron-right"></span>
+                                            <span class="sr-only">Next</span>
+                                          </a>
                                       </div>
 
                                 </section>
                             </div>
                         </div>
                     </div>
-
-                    
-
                     
                     <div id="f193be48-0795-4d80-a0c2-8b32598306ef" class="widget widget-rss widget-rss-rss-3">
                         <div data-ux="Widget" role="region" id="f193be48-0795-4d80-a0c2-8b32598306ef" class="x-el x-el-div x-el c1-1 c1-2 c1-3 c1-b c1-c c1-d c1-e c1-f c1-g c1-1 c1-2 c1-b c1-c c1-d c1-e c1-f c1-g">
                             <div>
+                                
                                 <!-- <section data-ux="Section" class="x-el-section c1-1 c1-2 c1-3 c1-i c1-j c1-b c1-c c1-l c1-m c1-d c1-e c1-f c1-g">
                                     <div data-ux="Container" class="x-el x-el-div c1-1 c1-2 c1-35 c1-36 c1-s c1-t c1-1i c1-b c1-c c1-59 c1-d c1-5a c1-e c1-5b c1-f c1-5c c1-g">
                                         <div data-ux="Intro" class="x-el x-el-div x-el c1-1 c1-2 c1-ak c1-77 c1-b c1-c c1-d c1-e c1-f c1-g c1-1 c1-2 c1-b c1-c c1-d c1-e c1-f c1-g">
@@ -311,9 +311,13 @@
                                         <a href="" data-toggle="modal" data-target="#ContactForm">Write to us to get featured on our website</a>
                                       </div>
                                 </section> -->
-                                
-                            </br></br>
-                            
+                                 
+                            <div style="width: 50%; text-align: center; border: none; " class="card mb-2 mx-auto">
+                                <div class="card-body">
+                                    <h2 class="card-title"> {{ item.heading }} </h2>
+                                    <p style= "margin-top: 30px; font-size: 20px ;padding: 10px;bottom:-140px;"> {{ item.text }}  </p> </br>
+                                </div>
+                                </div>
                                 {% for blog in blogs reversed %}
                                 <div style="width: 50%; text-align: center; " class="card mb-2 mx-auto">
                                     <img class="card-img-top" src= "{{ blog.image }}" alt="Image Not Available">
@@ -394,23 +398,22 @@
                                                         <p style="margin:0">
                                                             <p>
                                                                 <a style="text-decoration: none;" href="mailto:contact@desiwanderer.in">
-                                                                  <ion-icon size="large" name="mail-outline"></ion-icon>
+                                                                  <ion-icon size="large" name="mail-outline" color="primary"></ion-icon>
                                                                 </a> &nbsp; 
                                                                 <a style="text-decoration: none;" href="https://github.com/aayushvashistha">
-                                                                  <ion-icon size="large" name="logo-github"></ion-icon>
+                                                                  <ion-icon size="large" name="logo-github" color="primary"></ion-icon>
                                                                 </a> &nbsp;
                                                                 <a style="text-decoration: none;" href="https://github.com/aayushvashistha">
-                                                                    <ion-icon size="large" name="logo-instagram"></ion-icon>
+                                                                    <ion-icon size="large" name="logo-instagram" color="primary"></ion-icon>
                                                                 </a> &nbsp;
                                                                 <a style="text-decoration: none;" href="https://github.com/aayushvashistha">
-                                                                    <ion-icon size="large" name="logo-twitter"></ion-icon>
+                                                                    <ion-icon size="large" name="logo-twitter" color="primary"></ion-icon>
                                                                 </a>&nbsp;
                                                                 <a style="text-decoration: none;" href="https://github.com/aayushvashistha">
-                                                                    <ion-icon size="large" name="logo-facebook"></ion-icon>
+                                                                    <ion-icon size="large" name="logo-facebook" color="primary"></ion-icon>
                                                                 </a>
                                                               </p></br>
                                                               <span>Copyright © 2023- All Rights Reserved.</span>
-                                                        </p>
                                                     </div>
                                                 </div>
                                                 <div data-ux="GridCell" class="x-el x-el-div c1-1 c1-2 c1-6o c1-ck c1-6u c1-6v c1-1i c1-37 c1-2u c1-38 c1-2v c1-b c1-c c1-d c1-cl c1-cm c1-e c1-f c1-g">
@@ -441,6 +444,7 @@
                     </div>
                     <div id="ecbcaca4-34a1-4d9e-b643-3ceff14a868a" class="widget widget-popup widget-popup-popup-1"></div>
                 </div>
+                {% endfor %}
             </div>
         </div>
         {% include 'form.html' %}
