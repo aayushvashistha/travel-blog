@@ -320,11 +320,11 @@
                                 </div>
                                 {% for blog in blogs reversed %}
                                 <div style="width: 50%; text-align: center; " class="card mb-2 mx-auto">
-                                    <img class="card-img-top" src= "{{ blog.image }}" alt="Image Not Available">
+                                    <img class="card-img-top" src= "{{ blog.imageHomepage }}" alt="Image Not Available">
                                     <div class="card-body">
                                       <h4 class="card-title">Featured</h4>
                                       <h5 class="card-title">{{ blog.title }}</h5>
-                                                  <p class="card-text">{{ blog.body | truncatewords:20 }}</p>
+                                                  <p class="card-text">{{ blog.main_body | truncatewords:20 }}</p>
                                                   <a style="text-decoration: none; color: rgb(12, 12, 12);" href="/post/{{ blog.id }}" class="btn btn-primary">See more</a>
                                       <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
                                       <p class="card-text"><small class="text-muted">{{ blog.created_at }}</small></p>

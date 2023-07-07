@@ -255,40 +255,30 @@ blockquote {
                                     </br>
                                         <h1 style="text-align: center; border: none;">{{ posts.title }}</h1>
                                         <p style="text-align: center;">
-                                          <small>By <em>Stephanie Eckles</em> | Posted on:
+                                          <small>By <em>{{ posts.created_by }}</em> | Posted on:
                                             <em>{{ posts.created_at}}</em></small>
                                         </p>
                                         <article class="container">
-                                            <img src="https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8M3x8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Paris" class="img--align-left" />
-                                            <h2>Topic Introduction</h2>
+                                            <img src="{{ posts.imagePrimary.url }}" alt="Paris" class="img--align-left" />
+                                            <h2>{{ posts.topicIntro_head }}</h2>
                                             <p>
-                                              Liquorice candy macaroon soufflé jelly cake. Candy canes marzipan.
-                                              Macaroon pie sesame snaps jelly-o.
+                                              {{ posts.topicIntro_body }}
                                             </p>
+                                            <h2>{{ posts.mainTopic_head }}</h2>
                                             <p>
-                                              Liquorice candy macaroon soufflé jelly cake. Candy canes ice cream
-                                              biscuit marzipan.
-                                            </p>
-                                            <h2>The Main Topic</h2>
-                                            <p>
-                                                {{ posts.body }}
+                                                {{ posts.main_body }}
                                             </p>
                                             <p>
                                               Liquorice candy macaroon soufflé jelly cake. Candy canes ice. Macaroon
                                               pie sesame snaps jelly-o.
                                             </p>
-                                            <h3>A subtopic to the main one</h3>
+                                            <h3>{{ posts.subtopic_head }}</h3>
                                             <p>
-                                              Candy canes ice cream biscuit marzipan. Macaroon pie sesame snaps
-                                              jelly-o.
-                                            </p>
-                                            <p>
-                                              Liquorice candy macaroon soufflé jelly cake. Macaroon pie sesame snaps
-                                              jelly-o.
+                                              {{ posts.subtopic_body }}
                                             </p>
                                             <blockquote>
-                                              <p>"Here's a fabulous thing someone said."</p>
-                                              <footer>- <cite>Someone Awesome</cite></footer>
+                                              <p>"Technology will eat everyone."</p>
+                                              <footer>- <cite>Nikola Tesla</cite></footer>
                                             </blockquote>
                                           </article>
                                       </div>

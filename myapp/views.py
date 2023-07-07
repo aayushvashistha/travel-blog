@@ -34,7 +34,7 @@ def contact(request):
 def post(request, pk):
 
     posts = blog.objects.get(id=pk)
-    print("-----------------------Post.html---------------------------\n", posts.id)
+    print("-----------------------Post.html---------------------------\n", posts)
     return render(request, 'post.html', {'posts': posts})
 
 def login(request):
