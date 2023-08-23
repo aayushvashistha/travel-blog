@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/9dff4a69-e593-4132-90de-19167291e891/resourceGroups/desi-wanderer_group/providers/Microsoft.Web/sites/desi-wanderer",
+    "appService.deploySubpath": "."
+}

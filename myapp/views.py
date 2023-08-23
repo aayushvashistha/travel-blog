@@ -15,7 +15,7 @@ def index(request):
     
     print("-----------------------HOME-----------------------\n")
     blogs = blog.objects.all()
-    items = item.objects.filter(heading='Welcome')
+    items = item.objects.filter(heading='Welcome to Desi Wanderer!')
     print(blogs, items)
     return render(request, 'index.html', {'blogs': blogs, 'items': items})
 
@@ -34,7 +34,7 @@ def contact(request):
 def post(request, pk):
 
     posts = blog.objects.get(id=pk)
-    print("-----------------------Post.html---------------------------\n", posts.id)
+    print("-----------------------Post.html---------------------------\n", posts)
     return render(request, 'post.html', {'posts': posts})
 
 def login(request):
