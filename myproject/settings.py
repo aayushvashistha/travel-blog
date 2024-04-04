@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-+2odvj_a8v9_e0$x5irtqs!i2ydq&oe^&lgwd1&3$lx^bz(qh$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['desi-wanderer.azurewebsites.net']
+ALLOWED_HOSTS = ['127.0.0.1','desi-wanderer.azurewebsites.net']
 
 
 # Application definition
@@ -73,9 +73,9 @@ TEMPLATES = [
     },
 ]
 
-CSRF_TRUSTED_ORIGINS = [
-    'https://desi-wanderer.azurewebsites.net'
-]
+# CSRF_TRUSTED_ORIGINS = [
+#     'https://desi-wanderer.azurewebsites.net'
+# ]
 
 WSGI_APPLICATION = 'myproject.wsgi.application'
 
@@ -125,10 +125,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = '/static'
+STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = ('static',)
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+# STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 STATIC_MEDIA = 'media/'
 MEDIA_ROOT = BASE_DIR
